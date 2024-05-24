@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  SecurityGroupStack:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: https://nestedstackcfn.s3.amazonaws.com/child2.yaml
+
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0bb84b8ffd87024d8  # Replace with a valid AMI ID for your region
+      SubnetId: subnet-05248a247be43b251  # Replace with a valid subnet ID for your VPC
+      SecurityGroupIds:
+        - !GetAtt SecurityGroupStack.Outputs.SecurityGroupId
+Outputs:
+  InstanceId:
+    Description: The Instance ID
+    Value: !Ref MyEC2Instance
