@@ -1,4 +1,4 @@
-🚀 Simplifying AWS Cloud Deployments with Nested Stacks! 🌐
+🚀 Simplifying AWS Cloud Deployments with Nested Stacks!
 Sharing some insights into how AWS CloudFormation nested stacks have transformed our infrastructure management, making deployments more modular, scalable, and easier to maintain.
 
 What are Nested Stacks?
